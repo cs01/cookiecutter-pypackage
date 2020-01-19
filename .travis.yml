@@ -1,26 +1,19 @@
-# Config file for automatic testing at travis-ci.org
-
 language: python
-python:
-  - 3.8
-  - 3.7
-  - 3.6
-  - 3.5
+os: linux
+cache:
+    pip: true
+matrix:
+    include:
+        - python: "3.7"
+          env: NOXSESSION="tests-3.7"
+          dist: xenial
+        - python: "3.8"
+          env: NOXSESSION="tests-3.8"
+        - python: "3.7"
+          env: NOXSESSION="lint"
+          dist: xenial
+install:
+    - pip install nox
 
-# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install: pip install -U tox-travis
-
-# command to run tests, e.g. python setup.py test
-script: tox
-
-# deploy new versions to PyPI
-deploy:
-  provider: pypi
-  distributions: sdist bdist_wheel
-  user: audreyr
-  password:
-    secure: PLEASE_REPLACE_ME
-  on:
-    tags: true
-    repo: audreyr/python_boilerplate
-    python: 3.8
+script:
+    - nox --non-interactive --session "$NOXSESSION"
