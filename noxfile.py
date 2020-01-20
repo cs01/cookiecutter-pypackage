@@ -1,6 +1,3 @@
-import os
-import sys
-
 import nox  # type: ignore
 from pathlib import Path
 

@@ -1,5 +1,5 @@
 import subprocess
-import pytest
+import pytest  # type: ignore
 
 
 @pytest.mark.parametrize(
