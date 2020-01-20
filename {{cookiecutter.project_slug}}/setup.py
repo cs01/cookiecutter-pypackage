@@ -36,10 +36,12 @@ setup(
 {%- endif %}
     long_description=readme,
     long_description_content_type="text/markdown",
+    package_data={"{{ cookiecutter.project_slug }}": ["py.typed"]},
     include_package_data=True,
     keywords="{{ cookiecutter.project_slug }}",
     name="{{ cookiecutter.project_slug }}",
-    packages=find_packages(include=["{{ cookiecutter.project_slug }}", "{{ cookiecutter.project_slug }}.*"]),
+    package_dir={"": "src"},
+    packages=find_packages(include=["src/{{ cookiecutter.project_slug }}", "src/{{ cookiecutter.project_slug }}.*"]),
     setup_requires=[],
     url="https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}",
     version="{{ cookiecutter.version }}",

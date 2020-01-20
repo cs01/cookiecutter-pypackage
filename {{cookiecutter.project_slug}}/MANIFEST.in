@@ -1,3 +1,4 @@
+graft src
 include *.md LICENSE
 
 exclude .flake8 noxfile.py .coveragerc

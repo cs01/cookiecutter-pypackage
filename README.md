@@ -1,4 +1,8 @@
 # cs01 Cookiecutter PyPackage
+<p align="center">
+
+<a href="https://travis-ci.org/cs01/cookiecutter-pypackage"><img src="https://travis-ci.org/cs01/cookiecutter-pypackage.svg?branch=master" /></a>
+</p>
 
 -   GitHub repo: https://github.com/cs01/cookiecutter-pypackage/
 
@@ -7,6 +11,10 @@
 -   [pytest](https://docs.pytest.org/en/latest/): The pytest framework makes it easy to write small tests, yet scales to support complex functional testing for applications and libraries.
 -   [Travis-CI](https://travis-ci.org/): Ready for Travis Continuous Integration testing
 -   [nox](https://pypi.org/project/nox/): Project automation and testing for multiple Python environment
+-   [mypy](https://pypi.org/project/mypy/): Typing enabled, with PEP 561 support so your typing extends to consumers of your package
+-   src dir: Directory structure uses `src` directory to ensure no accidental installations
+
+
 
 Made with [Cookiecutter](https://cookiecutter.readthedocs.io/en/latest/index.html), so you can modify the and fork this template easily.
 
