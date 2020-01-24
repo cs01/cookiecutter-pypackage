@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import os
 import subprocess
+from shutil import which
 
 PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
 
@@ -23,4 +24,5 @@ if __name__ == "__main__":
     if "Not open source" == "{{ cookiecutter.open_source_license }}":
         remove_file("LICENSE")
 
-    subprocess.run(["black", PROJECT_DIRECTORY, "--quiet"])
+    if which("black"):
+        subprocess.run(["black", PROJECT_DIRECTORY, "--quiet"])
